@@ -1,6 +1,6 @@
 # WhatsApp Patron Connect
 
-This repository contains a straightforward web application designed for connecting with patrons via WhatsApp. The application allows library staff to send images along with descriptions, and this information is sent in bulk to a list of WhatsApp numbers present in the Koha database using the WhatsApp API.
+This repository contains a simple web application designed for connecting with patrons via WhatsApp. The application allows library staff to send images along with descriptions, and this information is sent in bulk to a list of WhatsApp numbers present in the Koha database using the WhatsApp API.
 
 ## Dependencies
 
