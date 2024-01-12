@@ -57,7 +57,7 @@ This repository contains a simple web application designed for connecting with p
 
 ## Usage
 
-1. Open the `http://serverurl/index.html` file in a web browser to access the WhatsApp Connect form.
+1. Open the `http://kohaopacurl/wpc` file in a web browser to access the WhatsApp Connect form.
 
 2. Fill in the required information, including uploading an image and providing a description.
 
