@@ -15,24 +15,30 @@ This repository contains a simple web application designed for connecting with p
 
 ## Installation
 
-1. Navigate to the Koha opac htdocs directory:
+1. Install necessary dependencies:
 
-```bash
-cd /usr/share/koha/opac/htdocs
-```
+    ```bash
+    sudo apt-get install -y git php libapache2-mod-php php-{bcmath,bz2,intl,gd,mbstring,mysql,zip}
+    ```
 
-2. Clone the project repository:
+2. Navigate to the Koha OPAC htdocs directory:
 
-```bash
-sudo git clone https://github.com/maheshpalamuttath/bss.git
-```
+    ```bash
+    cd /usr/share/koha/opac/htdocs
+    ```
 
-3. Set the appropriate permissions:
+3. Clone the project repository:
 
-```bash
-sudo chmod 755 -R inout
-sudo chown www-data:www-data -R inout
-```
+    ```bash
+    sudo git clone https://github.com/maheshpalamuttath/wpc.git
+    ```
+
+4. Set appropriate permissions:
+
+    ```bash
+    sudo chmod 755 -R wpc
+    sudo chown www-data:www-data -R wpc
+    ```
 
 ## Configuration
 
