@@ -22,7 +22,7 @@ This repository contains a straightforward web application designed for connecti
 
 1. Open the `http://serverurl/index.html` file in a web browser to access the WhatsApp Connect form.
 
-2. Fill in the required information, including uploading an image or document and providing a description.
+2. Fill in the required information, including uploading an image and providing a description.
 
 3. Click the "Send" button to initiate the process.
 
