@@ -4,20 +4,24 @@ This repository contains a straightforward web application designed for connecti
 
 ## Installation
 
-1. Clone the repository:
+1. Navigate to the Koha opac htdocs directory:
 
-    ```bash
-    cd /var/www/html/
-    sudo git clone https://github.com/maheshpalamuttath/bss.git
-    ```
+```bash
+cd /usr/share/koha/opac/htdocs
+```
 
-2. Set appropriate ownership and permissions for the upload folder:
+2. Clone the project repository:
 
-    ```bash
-    sudo chown -R www-data:www-data /var/www/html/bss/upload_image/
-    sudo chmod -R 755 /var/www/html/bss/upload_image/
-    ```
+```bash
+sudo git clone https://github.com/maheshpalamuttath/bss.git
+```
 
+3. Set the appropriate permissions:
+
+```bash
+sudo chmod 755 -R inout
+sudo chown www-data:www-data -R inout
+```
 ## Usage
 
 1. Open the `http://serverurl/index.html` file in a web browser to access the WhatsApp Connect form.
