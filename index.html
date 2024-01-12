@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Patron Connect</title>
+
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Add Custom CSS for additional styling -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Add a line below the textarea */
+        textarea+hr {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Additional style for the WhatsApp text */
+        p.whatsapp-text {
+            font-size: 14px; /* Adjust the size as needed */
+        }
+
+        /* Updated style for the warning text */
+        p.warning-text {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="mt-4 mb-4 text-center">WhatsApp Connect</h1>
+
+        <form action="process.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image">File (Image/Document):</label>
+                <input type="file" class="form-control" name="image" id="image" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" name="description" id="description" rows="4" required></textarea>
+                <!-- Updated paragraph with the warning-text class -->
+                <p class="warning-text">
+                    Caution: Once sent, a message cannot be retracted; write and deliver carefully.
+                </p>
+                <hr>
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-primary" value="Send ">
+            </div>
+
+            <!-- Updated WhatsApp text with the added class -->
+            <p class="whatsapp-text text-center">
+                Connect users via WhatsApp.
+            </p>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
