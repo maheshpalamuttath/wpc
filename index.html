@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Patron Connect</title>
+    <title>WhasApp Patron Connect</title>
 
     <!-- Add Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -41,11 +41,6 @@
             border-top: 1px solid #ddd;
         }
 
-        /* Additional style for the WhatsApp text */
-        p.whatsapp-text {
-            font-size: 14px; /* Adjust the size as needed */
-        }
-
         /* Updated style for the warning text */
         p.warning-text {
             color: red;
@@ -56,12 +51,13 @@
 <body>
 
     <div class="container">
-        <h1 class="mt-4 mb-4 text-center">WhatsApp Connect</h1>
+        <h1 class="mt-4 mb-4 text-center">WhasApp Patron Connect</h1>
+        <p class="text-center">Welcome to WhatsApp Patron Connect! This platform allows you to send messages with ease. Connect with your patrons and manage your communications efficiently.</p>
 
         <form action="process.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="image">File (Image/Document):</label>
-                <input type="file" class="form-control" name="image" id="image" accept="image/*" required>
+                <label for="file">Upload File (Image/Document):</label>
+                <input type="file" class="form-control" name="file" id="file" accept=".jpg, .jpeg, .png, .pdf" required>
             </div>
 
             <div class="form-group">
@@ -75,15 +71,17 @@
             </div>
 
             <div class="form-group text-center">
-                <input type="submit" class="btn btn-primary" value="Send ">
+                <input type="submit" class="btn btn-primary" value="Send Message">
             </div>
-
-            <!-- Updated WhatsApp text with the added class -->
-            <p class="whatsapp-text text-center">
-                Connect users via WhatsApp.
-            </p>
         </form>
-    </div>
+<footer class="text-center mt-4">
+    &copy; <script>document.write(new Date().getFullYear())</script>
+    <a href="#/" target="_blank" class="footer_lnk">WhasApp Patron Connect</a>. All Rights Reserved.<br>
+    Implemented by <a href="https://maheshpalamuttath.info/" target="_blank" class="footer_lnk" rel="noopener">Mahesh Palamuttath</a>.
+</footer>
+
+</div>
+
 
     <!-- Add Bootstrap JS and Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
