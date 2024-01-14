@@ -47,7 +47,7 @@ This repository contains a simple web application designed for connecting with p
 1. Configure the database connection in the PHP script (`process.php`). Modify the following lines with your database details:
 
     ```php
-    $pdo = new PDO('mysql:host=localhost;dbname=koha_library', 'koha_library', 'koha123');
+    $pdo = new PDO('mysql:host=localhost;dbname=koha_library', 'koha_library', 'kohalib');
     ```
 
 2. Set up the WhatsApp API details in the PHP script (`process.php`). Modify the following lines with your API key and authentication details:
@@ -59,7 +59,7 @@ This repository contains a simple web application designed for connecting with p
 
 ## Usage
 
-1. Open the `http://kohaopacurl/wpc` file in a web browser to access the WhatsApp Connect form.
+1. Open the `http://server-ip/wpc` file in a web browser to access the WhatsApp Connect form.
 
 2. Fill in the required information, including uploading an image and providing a description.
 
