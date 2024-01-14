@@ -36,8 +36,7 @@ This repository contains a simple web application designed for connecting with p
 4. Set appropriate permissions:
 
     ```bash
-    sudo chmod 755 -R wpc
-    sudo chown www-data:www-data -R wpc
+    sudo chmod 755 -R wpc && sudo chown www-data:www-data -R wpc
     cd wpc && sudo mkdir file_upload
     sudo chown www-data:www-data -R file_upload/ && sudo chmod 755 -R file_upload/
     ```
