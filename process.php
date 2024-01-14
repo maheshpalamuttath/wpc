@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Process the form data
 
     // Handle file upload
-    $targetDir = '/var/www/html/bss/file_upload/';
+    $targetDir = '/var/www/html/wpc/file_upload/';
 
     // Generate a unique filename
     $uniqueFilename = uniqid() . '_' . basename($_FILES['file']['name']);
