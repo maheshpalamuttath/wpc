@@ -24,7 +24,7 @@ This repository contains a simple web application designed for connecting with p
 2. Navigate to the Koha OPAC htdocs directory:
 
     ```bash
-    cd /usr/share/koha/opac/htdocs
+    cd /var/www/html
     ```
 
 3. Clone the project repository:
