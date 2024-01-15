@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $host = 'localhost';
         $dbname = 'koha_library';
         $username = 'koha_library';
-        $password = 'koha123';
+        $password = 'kohalib';
 
         // Connect to MySQL
         $mysqli = new mysqli($host, $username, $password, $dbname);
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $api_url = 'https://whats-api.rcsoft.in/api/create-message';
 
                 // Upload the file to a server or cloud storage and obtain the URL
-                $fileUrl = 'http://139.84.136.102:8080/file_upload/' . $uniqueFilename;
+                $fileUrl = 'http://139.84.136.102:8000/file_upload/' . $uniqueFilename;
 
                 // Prepare data for cURL
                 $message = "Hey, {$row['surname']}\n\n{$_POST['description']}\n\nFr. Francis Sales Library";
