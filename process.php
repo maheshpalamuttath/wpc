@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // SQL query to get phone numbers
-        $sql = "SELECT phone, surname FROM borrowers WHERE phone IS NOT NULL AND TRIM(phone) <> ''";
+        $sql = "SELECT b.phone, b.surname, br.branchname FROM borrowers b LEFT JOIN branches br ON b.branchcode = br.branchcode WHERE b.phone IS NOT NULL AND TRIM(b.phone) <> ''";
         $result = $mysqli->query($sql);
 
         // Check if there are rows in the result
@@ -39,10 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $api_url = 'https://whats-api.rcsoft.in/api/create-message';
 
                 // Upload the file to a server or cloud storage and obtain the URL
-                $fileUrl = 'http://139.84.136.102:8000/file_upload/' . $uniqueFilename;
+                $fileUrl = 'http://139.84.140.179:8000/file_upload/' . $uniqueFilename;
 
                 // Prepare data for cURL
-                $message = "Hey, {$row['surname']}\n\n{$_POST['description']}\n\nFr. Francis Sales Library";
+                $message = "Hey, {$row['surname']}\n\n{$_POST['description']}\n\n{$row['branchname']}";
                 $postData = array(
                     'appkey' => '9b775612-aaac-45b1-b3d6-d1d7370d9a54',
                     'authkey' => 'pUtcMF1wfCotkOvhutAgFg6NYJOjt3XoPGuetuX9V9cy82Lic2',
@@ -106,3 +106,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+;
