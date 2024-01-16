@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $mysqli->connect_error);
         }
 
-        // SQL query to get phone numbers
-        $sql = "SELECT b.phone, b.surname, br.branchname FROM borrowers b LEFT JOIN branches br ON b.branchcode = br.branchcode WHERE b.phone IS NOT NULL AND TRIM(b.phone) <> ''";
+        // SQL query to get phone numbers with expiry date check
+        $sql = "SELECT b.phone, b.surname, br.branchname, b.dateexpiry FROM borrowers b LEFT JOIN branches br ON b.branchcode = br.branchcode WHERE b.phone IS NOT NULL AND TRIM(b.phone) <> '' AND CURDATE() <= b.dateexpiry";
         $result = $mysqli->query($sql);
 
         // Check if there are rows in the result
@@ -106,4 +106,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-;
