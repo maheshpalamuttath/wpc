@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Prepare data for cURL
                 $message = "Hey, {$row['surname']}\n\n{$_POST['description']}\n\n{$row['branchname']}";
                 $postData = array(
-                    'appkey' => '9b775612-aaac-45b1-b3d6-d1d7370d9a54',
+                    'appkey' => '361cb907-eafc-451d-b3ac-36dc4f2ab0b5',
                     'authkey' => 'pUtcMF1wfCotkOvhutAgFg6NYJOjt3XoPGuetuX9V9cy82Lic2',
                     'to' => $row['phone'],
                     'message' => $message,
