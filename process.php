@@ -32,6 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "SELECT b.phone, b.surname, br.branchname, b.dateexpiry FROM borrowers b LEFT JOIN branches br ON b.branchcode = br.branchcode WHERE b.phone IS NOT NULL AND TRIM(b.phone) <> '' AND CURDATE() <= b.dateexpiry";
         $result = $mysqli->query($sql);
 
+        // Initialize cURL
+        $curl = curl_init();
+
         // Check if there are rows in the result
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -52,9 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'sandbox' => 'false'
                 );
 
-                // cURL setup
-                $curl = curl_init();
-
+                // Set cURL options
                 curl_setopt_array($curl, array(
                     CURLOPT_URL => $api_url,
                     CURLOPT_RETURNTRANSFER => true,
@@ -67,27 +68,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     CURLOPT_POSTFIELDS => $postData,
                 ));
 
-                try {
-                    // Execute cURL
-                    $response = curl_exec($curl);
+                // Execute cURL
+                $response = curl_exec($curl);
 
-                    if ($response === false) {
-                        throw new Exception('Curl error: ' . curl_error($curl));
-                    }
-
+                if ($response === false) {
+                    echo 'Curl error: ' . curl_error($curl);
+                } else {
                     $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 
                     if ($httpCode != 200) {
-                        throw new Exception('HTTP request failed with code ' . $httpCode);
+                        echo 'HTTP request failed with code ' . $httpCode;
+                    } else {
+                        // Output the response
+                        echo $response;
                     }
-
-                    // Output the response
-                    echo $response;
-                } catch (Exception $e) {
-                    echo 'Error: ' . $e->getMessage();
-                } finally {
-                    // Close cURL
-                    curl_close($curl);
                 }
             }
 
@@ -96,6 +90,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "No phone numbers found in the database.";
         }
+
+        // Close cURL
+        curl_close($curl);
 
         // Close MySQL connection
         $mysqli->close();
